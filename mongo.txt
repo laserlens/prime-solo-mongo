@@ -21,6 +21,6 @@ db.orders.find({orderDate:{$gt:new Date("2016-01-01")}}).pretty()
 // 7. Find orders with lineItems that have a quantity that is less than 50, but greater than 5
 db.orders.find({"lineItems.quantity":{"$gt":5, "$lt":50}})
 // 8. Update one of your line items to 42.99.
-db.orders.update({"lineItems.quantity":50},{$set:{"quantity":42.99}})
+db.orders.update({"lineItems.quantity":50},{$set:{"lineItems.quantity":42.99}})
 // 9. Remove one of your orders.
 db.books.remove({"orderTotal" : 40})
